@@ -5,6 +5,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
 
+@st.cache_data(show_spinner=False)
+def load_data():
+    return pd.read_csv("nykaa_premium_discount_data.csv")
+
+data = load_data()
 st.set_page_config(page_title="Nykaa Premium Discount Intelligence", layout="wide")
 
 st.markdown("""
